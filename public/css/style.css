@@ -25,8 +25,9 @@ h2{
 }
 
 pre.tutorial{
+    background-color: yellow;
     
-    background-color:yellow;
+    white-space:pre-wrap;
       
 }
 

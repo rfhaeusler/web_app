@@ -47,36 +47,10 @@
     
     
     <%= yield %>
+   
     
-    <div class="section">
-      <hr>
-      Título: <input type="text" name="tit_section"><br>
-      Abreviação: <input type="text" name="abbrev"><br><hr>
-      <h4>Artigo</h4>
-      Título: <input type="text" name="tit_art"><br>
-      Resumo: <input type="text" name="abstract"><br>
-      Número de páginas: <input type="text" name="pages"><br>
-      Data de Publicação: <input type="text" name="data_published"><br>
-      Título do Arquivo: <input type="text" name="filename"><br>
-      Url do arquivo: <input type="text" name="filepath"><br><hr>
-      <h4>Autor</h4>
-      Primeiro nome: <input type="text" name="firstname"><br>
-      Nome do meio: <input type="text" name="middlename"><br>
-      Último nome: <input type="text" name="lastname"><br>
-      Email: <input type="text" name="email"><br>
-      <button class="replicate_button">REPLICATE</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <button class="delete_button">DELETE</button>
-   </div>
-   <div class="replicate"></div>
-    
-    <script>
-      $(document).ready(function(){ 
-      $(".replicate_button").click(function(){
-      var a = $("div.section").html()
-      $(a).appendTo("div.replicate");});
-      });
-    </script>
 
-    <div class="tutorial"  >
+    <div class="tutorial" >
       <pre class="tutorial" ><%= tutorial1%></pre>
       <img border="1" src="/tutorial1.png"   width="600" height="600" />
       <br><pre class="tutorial" ><%= tutorial2%></pre>

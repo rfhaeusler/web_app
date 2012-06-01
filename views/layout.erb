@@ -1,0 +1,105 @@
+<html>
+  
+  <head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    
+
+    <script type="text/javascript">
+      function checkFile() {
+      var fileElement = document.getElementById("fileup");
+      var fileExtension = "";
+      if (fileElement.value.lastIndexOf(".") > 0) {
+      fileExtension = fileElement.value.substring(fileElement.value.lastIndexOf(".") + 1, fileElement.value.length);
+      }
+      if (fileExtension == "xml") {
+      return true;
+      }
+      else {
+      alert("You must select a XML file for upload");
+      return false;
+      }
+      }
+    </script>
+    
+    
+    <title> XML Converter</title>    
+
+  </head>
+
+  <body >
+    
+    <h1 style="background-color:#E42217; margin-top:10px; border-bottom:3px solid;">XML Converter</h1>
+    
+    
+    <div id="tut"><a style="width:100px; height:50px; font-size:20px;" >Tutorial:   <button class="btn1">Slide up</button> <button class="btn2">Slide down</button></a></div>
+ 
+   <form method="post" id="upload"  enctype="multipart/form-data" onsubmit="return checkFile();" action="/upload" >
+      <p>Escolha o arquivo a ser convertido para o formato BibTeX:<input name="fileup" id="fileup" type="file" /></p>
+      <input  type="submit" value="Submit">
+      
+    </form>
+    
+    <hr style="color:#E42217;">
+
+    
+    
+    <%= yield %>
+    
+    <div class="section">
+      <hr>
+      Título: <input type="text" name="tit_section"><br>
+      Abreviação: <input type="text" name="abbrev"><br><hr>
+      <h4>Artigo</h4>
+      Título: <input type="text" name="tit_art"><br>
+      Resumo: <input type="text" name="abstract"><br>
+      Número de páginas: <input type="text" name="pages"><br>
+      Data de Publicação: <input type="text" name="data_published"><br>
+      Título do Arquivo: <input type="text" name="filename"><br>
+      Url do arquivo: <input type="text" name="filepath"><br><hr>
+      <h4>Autor</h4>
+      Primeiro nome: <input type="text" name="firstname"><br>
+      Nome do meio: <input type="text" name="middlename"><br>
+      Último nome: <input type="text" name="lastname"><br>
+      Email: <input type="text" name="email"><br>
+      <button class="replicate_button">REPLICATE</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <button class="delete_button">DELETE</button>
+   </div>
+   <div class="replicate"></div>
+    
+    <script>
+      $(document).ready(function(){ 
+      $(".replicate_button").click(function(){
+      var a = $("div.section").html()
+      $(a).appendTo("div.replicate");});
+      });
+    </script>
+
+    <div class="tutorial"  >
+      <pre class="tutorial" ><%= tutorial1%></pre>
+      <img border="1" src="/tutorial1.png"   width="600" height="600" />
+      <br><pre class="tutorial" ><%= tutorial2%></pre>
+      <img border="1" src="/tutorial2.png"   width="600" height="600" />
+      <br><pre class="tutorial" ><%= tutorial3%></pre> 
+      <img border="1" src="/tutorial3.png"   width="600" height="600" />
+      <br><pre class="tutorial" ><%= tutorial4%></pre> 
+      <img border="1" src="/tutorial4.png"  width="600" height="600" />
+      <button class="btn1">Slide up</button>
+    </div>
+
+
+    <script>
+      $(document).ready(function(){
+      $("div.tutorial").hide(); 
+      $(".btn1").click(function(){
+      $("div.tutorial").slideUp();}),
+      $(".btn2").click(function(){
+      $("div.tutorial").slideDown();});
+      });
+    </script>    
+    <div style="background-color:#C0C0C0; text-align:center; font-size: 15px;" id="footer">&copy; 2012 FGV-Fundação Getúlio Vargas</div>
+    
+  </body>
+  
+</html>

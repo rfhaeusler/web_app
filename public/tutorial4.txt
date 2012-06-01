@@ -1,0 +1,4 @@
+4º Passo: Após clicar no ícone "Exportar para arquivo (RTF, XML)"
+abrira uma página, que contém as opções de formato RTF e XML, então
+você seliciona a opção XML e clica no ícone "confirmar", agora você
+está pronto para fazer o download do seu lattes (formato XML).

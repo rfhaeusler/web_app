@@ -1,0 +1,39 @@
+/*  
+    para criar classe no css basta botar "." antes do nome da
+    classe e inserir os parametros
+    */
+
+body {
+    color: black;
+    font-size: 15px;
+    margin: auto;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size:43px;
+    padding: 10px;
+}
+
+h2{
+    color: black;
+    font-size: 17px;
+   
+}
+
+pre.tutorial{
+    
+    background-color:yellow;
+      
+}
+
+div.tutorial{
+
+         
+    padding-left:50px;
+    margin-left:180px;
+    margin-right:230px;
+}

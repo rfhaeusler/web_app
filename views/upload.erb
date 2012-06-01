@@ -1,0 +1,29 @@
+
+
+<script src="http://malsup.github.com/jquery.form.js"></script>
+
+
+
+<div id="download"></div>
+
+<div> <pre id="result" style="white-space:pre-wrap; background-color:#C0C0C0;"></pre></div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#upload").ajaxForm({
+  url: $("#upload").attr("action"),
+  success: function(data) {
+  if(data == "ERROR"){
+  alert("Your submited file is not a acceptable XML for conversion")
+  }
+  else{
+  $("#result").empty().append( data);
+  
+  $("#download").empty().html(" <h2>If you prefer to download your converted file <a href='/convert'>click here</a></h2>");
+  }
+
+  }});
+  });
+</script>
